@@ -10,7 +10,7 @@ body {
   background-color: #f5f5f5;
 }
 
-button{
+button, .logo{
   margin: 10px 0;
 }
 
@@ -23,4 +23,8 @@ button{
 
 .form-label-group{
   margin: 10px 0;
+}
+
+a:hover{
+  text-decoration: none;
 }
