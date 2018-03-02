@@ -1,0 +1,54 @@
+form{
+  width: 80%;
+}
+
+footer{
+  background-color: #eee;
+}
+
+.jumbotron{
+  height: 500px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.45), 
+    rgba(0, 0, 0, 0.45)
+  ), url('image/img1.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#jumbotron-content{
+  margin: 70px auto;
+}
+
+#jumbotron-content > p{
+  color: whitesmoke;
+}
+
+#category, #location{
+  width: 20%;  
+}
+
+#search{
+  width: 40%;
+}
+
+#submit{
+  width: 19%;
+  border-radius: 0px;
+  padding: 14px 12px;  
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.card-text{
+  text-align: center;
+}
+
+.form-control{
+  height: 30px;
+  font-size: 14px;
+  vertical-align: middle;
+  background-color: whitesmoke;
+  border: 1px solid #dcdfe1;
+  border-radius: 0px;
+  padding: 24px 12px;
+}

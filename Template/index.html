@@ -12,31 +12,23 @@
     <title>Welcome to WeConnect</title>
   </head>
   <body>
-      <nav class="navbar bg-secondary navbar-dark navbar-expand-md fixed-top">
-          <a href="#" class="navbar-brand">WeConnect</a>
-          <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav my-2 my-lg-0" id="navScrollspy">
-                  <li class="nav-item mr-sm-2">
-                      <a href="signup.html" class="btn btn-outline-light">Sign up</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="login.html" class="btn btn-outline-light">Login</a>
-                  </li>
-              </ul>
-          </div>
-      </nav>
+      <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
+        <h5 class="my-0 mr-md-auto font-weight-normal">WeConnect</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="#">Register a Business</a>
+        </nav>
+        <a class="btn btn-outline-primary mr-sm-2" href="signup.html">Sign up</a>
+        <a class="btn btn-outline-primary" href="login.html">Login</a>
+      </div>
       <section class="jumbotron jumbotron-fluid">
           <div class="container">
-            <div class="row justify-content-md-center">
+            <div class="row justify-content-md-center" id="jumbotron-content">
                 <p class="display-4">Find Businesses in Nigeria</p>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-1" type="search" placeholder="What are you looking for?">
-                    <input class="form-control mr-1" type="search" placeholder="Location">
-                    <input class="form-control mr-1" type="search" placeholder="Category">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control" id="search" type="search" placeholder="What are you looking for?">
+                    <input class="form-control" id="location" type="search" placeholder="Location">
+                    <input class="form-control mr-1" id="category" type="search" placeholder="Category">
+                    <button class="btn btn-primary" id="submit" type="submit">Search</button>
                 </form>
             </div>
           </div>
@@ -48,52 +40,32 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                  <img class="card-img-top img-fluid" alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="image/photographer.jpg" alt="photographer">
                   <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
+                    <p class="card-text">Photography</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                  <img class="card-img-top" src="image/welder.jpg" alt="welder">
                   <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
+                    <p class="card-text">Welding</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                  <img class="card-img-top" src="image/graphic-artist.jpg" alt="graphic artist">
                   <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
+                    <p class="card-text">Graphic Artist</p>
                   </div>
                 </div>
               </div>
         </div>          
       </section>
-      <footer class="container py-5">
+      <footer class="container-fluid py-5">
+        <div class="container">
           <div class="row">
             <div class="col-12 col-md">
               <small>WeConnect</small>
@@ -138,7 +110,8 @@
               </ul>
             </div>
           </div>
-        </footer>
+        </div>  
+      </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
