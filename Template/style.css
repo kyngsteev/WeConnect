@@ -1,9 +1,12 @@
-form{
-  width: 80%;
-}
-
 footer{
   background-color: #eee;
+  /* position: fixed;
+  bottom: 0; */
+}
+
+h5 > a, h5 > a:hover{
+  text-decoration: none;
+  color: darkslategray;
 }
 
 #main-jumbotron{
@@ -35,12 +38,45 @@ footer{
   margin: 18px auto;
 }
 
+#review{
+  margin: 50px 0;
+}
+
 #submit{
   width: 19%;
   border-radius: 0px;
   padding: 14px 12px;  
   font-size: 14px;
   vertical-align: middle;
+}
+
+#list-text > ul > li{
+  font-size: 13px;
+}
+
+#list-text > hr{
+  margin-bottom: 0px;
+}
+
+#listNavText{
+  font-size: 14px;
+}
+
+#listRule {
+  margin-top: 0px;
+  margin-bottom: 0.5rem;
+}
+
+#mainSection{
+  max-height: 1140px;
+}
+
+#register-section{
+  margin: 100px auto;
+}
+
+.form-inline{
+  width: 80%;
 }
 
 .jumbotron{
@@ -61,18 +97,6 @@ footer{
   padding: 24px 12px;
 }
 
-#list-text > ul > li{
-  font-size: 13px;
-}
-
-#list-text > hr{
-  margin-bottom: 0px;
-}
-
-#listNavText{
-  font-size: 14px;
-}
-
 .business-list{
   height: 150px;
   margin-top: 0.5rem;
@@ -88,13 +112,4 @@ footer{
 
 .description{
   font-size: 14px;
-}
-
-#listRule {
-  margin-top: 0px;
-  margin-bottom: 0.5rem;
-}
-
-#mainSection{
-  max-height: 1140px;
 }

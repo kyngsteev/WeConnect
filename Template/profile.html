@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Business Profile Page</title>
+  </head>
+  <body>
+      <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
+        <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.html">WeConnect</a></h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="register.html">Register a Business</a>
+        </nav>
+        <a class="btn btn-outline-primary mr-sm-2" href="signup.html">Sign up</a>
+        <a class="btn btn-outline-primary" href="login.html">Login</a>
+      </div>
+      <section class="container">
+          <div class="business-list">
+              <div class="row">
+                <div class="col-3 listcard">
+                  <div class="card bg-dark text-white listcard">
+                    <img class="card-img" src="image/welder.jpg" alt="Card image">
+                  </div>
+                </div>
+                <div class="col-8 listcard">
+                  <h5 class="listTitle"> Abe Welding Limited</h5>
+                  <hr id="listRule">
+                  <p class="description"><span><b>Address: </b></span>123, XYZ street, Ibiza, Akowonjo</p>
+                  <p class="description"><span><b>Location: </b></span>Lagos</p>
+                  <div><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reviewModalCenter">Write a Review</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div id="review">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Reviews</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam dicta exercitationem pariatur magni ullam odio mollitia, voluptas odit architecto expedita voluptatibus accusantium vero eum dolor nisi suscipit in excepturi asperiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus harum, veritatis ullam iusto nemo temporibus cupiditate ipsam reiciendis! Tenetur tempore harum alias ratione ut iste temporibus possimus atque, nulla adipisci.</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fugit, ullam architecto doloribus numquam minus voluptate quos voluptatibus earum! Quod earum magni neque, obcaecati quis nisi dolores ipsum voluptas placeat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium architecto odio odit, ut dolorum dolore voluptas amet ipsam aspernatur. Doloremque nisi veniam dolorem esse, id placeat non numquam velit! Amet.</div>
+          </div>
+        </div>
+      </section>
+      <footer class="container-fluid py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md">
+              <small>WeConnect</small>
+              <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+            </div>
+            <div class="col-6 col-md">
+              <h5>Features</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Register a Business</a></li>
+                <li><a class="text-muted" href="#">Add Reviews</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h5>Locations</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Abuja</a></li>
+                <li><a class="text-muted" href="#">Lagos</a></li>
+                <li><a class="text-muted" href="#">Kaduna</a></li>
+                <li><a class="text-muted" href="#">Kano</a></li>
+                <li><a class="text-muted" href="#">Port Harcourt</a></li>
+                <li><a class="text-muted" href="#">Onitsha</a></li>
+                <li><a class="text-muted" href="#">Owerri</a></li>
+                <li><a class="text-muted" href="#">Calabar</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h5>Categories</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Banking</a></li>
+                <li><a class="text-muted" href="#">Education</a></li>
+                <li><a class="text-muted" href="#">Government</a></li>
+                <li><a class="text-muted" href="#">Maanufacturing</a></li>
+                <li><a class="text-muted" href="#">Information Technology</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h5>About</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Team</a></li>
+                <li><a class="text-muted" href="#">Privacy</a></li>
+                <li><a class="text-muted" href="#">Terms</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>  
+      </footer>
+      <!-- Modal -->
+      <div class="modal fade" id="reviewModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="modal-form">
+                <div class="form-group">
+                  <label for="reviewer-name" class="col-form-label">Name:</label>
+                  <input type="text" class="form-control" id="reviewer-name">
+                </div>
+                <div class="form-group">
+                    <label for="reviewer-email" class="col-form-label">Email:</label>
+                    <input type="email" class="form-control" id="reviewer-email">
+                  </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Message:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script href="https://getbootstrap.com/assets/js/vendor/holder.min.js"></script>
+  </body>
+</html>
