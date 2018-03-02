@@ -6,7 +6,7 @@ footer{
   background-color: #eee;
 }
 
-.jumbotron{
+#main-jumbotron{
   height: 500px;
   background: linear-gradient(
     rgba(0, 0, 0, 0.45), 
@@ -31,12 +31,20 @@ footer{
   width: 40%;
 }
 
+#listForm{
+  margin: 18px auto;
+}
+
 #submit{
   width: 19%;
   border-radius: 0px;
   padding: 14px 12px;  
   font-size: 14px;
   vertical-align: middle;
+}
+
+.jumbotron{
+  height: 200px;
 }
 
 .card-text{
@@ -51,4 +59,42 @@ footer{
   border: 1px solid #dcdfe1;
   border-radius: 0px;
   padding: 24px 12px;
+}
+
+#list-text > ul > li{
+  font-size: 13px;
+}
+
+#list-text > hr{
+  margin-bottom: 0px;
+}
+
+#listNavText{
+  font-size: 14px;
+}
+
+.business-list{
+  height: 150px;
+  margin-top: 0.5rem;
+}
+
+.business-list > .row, .listcard{
+  height: 150px;
+}
+
+.card-img{
+  height: 100%;
+}
+
+.description{
+  font-size: 14px;
+}
+
+#listRule {
+  margin-top: 0px;
+  margin-bottom: 0.5rem;
+}
+
+#mainSection{
+  max-height: 1140px;
 }
