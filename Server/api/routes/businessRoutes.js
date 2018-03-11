@@ -1,18 +1,7 @@
-module.exports = (app) => {
-	// api/models/businessRoutes.js
-	const myBusiness = require('../controllers/businessController');
+const express = require('express');
 
-	// our Routes
-	app.route('/businesses')
-		.get(myBusiness.getBusinesses)
-		.post(myBusiness.createBusinesses);
+const router = express.Router();
 
-	app.route('/businesses/:businessId')
-		.get(myBusiness.readBusinesses)
-		.put(myBusiness.updateBusinesses)
-		.delete(myBusiness.deleteBusinesses);
+router.use('/v1/businesses', require('../controllers/businessController'));
 
-	app.route('/businesses/:businessId/reviews')
-		.get(myBusiness.getReviews)
-		.post(myBusiness.postReviews);
-};
+module.exports = router;

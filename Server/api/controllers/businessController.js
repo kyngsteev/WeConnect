@@ -1,41 +1,82 @@
 const express = require('express');
+const dummyModels = require('../models/dummyData');
+const createBusiness = require('../models/businessModel');
 
-const router = express.Router();
-// get data model
-global.businesses = [
-	{
-		id: 1,
-		bizName: 'ABC Transport Limited',
-		bizAddress: '34 XYZ street, Lagos'
-	},
 
-	{
-		id: 2,
-		bizName: 'Iya Photo Images',
-		bizAddress: '1 Cyclone Causeway, Jos'
-	},
+let api = express.Router();
 
-	{
-		id: 3,
-		bizName: 'Emeka Metal Works',
-		bizAddress: '55, Jabulani Cresent, Enugu'
+// '/v1/businesses' - Create
+api.post('/', (req, res) => {
+	if (!req.body.name) {
+		return res.status(404).json({
+			message: 'Bad Request: name missing',
+			error: true
+		});
+	} else if (!req.body.address) {
+		return res.status(404).json({
+			message: 'Bad Request: address missing',
+			error: true
+		});
 	}
-];
+	const newBiz = createBusiness(req.body.name, req.body.address);
+	return res.status(201).json(newBiz);
+});
 
-// get all Businesses
-
-// exports.getBusinesses = (req, res) => {
-// 	BusinessData.find({}, (err, business) => {
-// 		if (err) {
-// 			res.send(err);
-// 		}
-// 		res.json(business);
-// 	});
-// };
-
-router.get('/', (res, req) => res.json({
-	businesses: global.businesses,
+// '/v1/restaurant/' - Read
+api.get('/', (req, res) => res.json({
+	restaurants,
 	error: false
 }));
 
-module.exports = router;
+// // '/v1/restaurant/:restaurantid' - Get 1 record
+// api.get('/:restaurantid', (req, res) => {
+// 	for (let restaurant of restaurants) {
+// 		if (restaurant.id === parseInt(req.params.restaurantid, 10)) {
+// 			return res.json({
+// 				restaurant,
+// 				message: 'success',
+// 				error: false
+// 			});
+// 		}
+// 	}
+// 	return res.status(404).json({
+// 		message: 'User not found',
+// 		error: true
+// 	});
+// });
+
+// // '/v1/restaurant/:restaurantid' - Update
+// api.put('/:restaurantid', (req, res) => {
+// 	for (let restaurant of restaurants) {
+// 		if (restaurant.id === parseInt(req.params.restaurantid, 10)) {
+// 			restaurant.name = req.body.name;
+// 			return res.json({
+// 				message: 'success',
+// 				error: false
+// 			});
+// 		}
+// 	}
+// 	return res.status(404).json({
+// 		message: 'User not found',
+// 		error: true
+// 	});
+// });
+
+// // '/v1/restaurant/:restaurantid' - Delete
+// api.delete('/:restaurantid', (req, res) => {
+// 	for (let i = 0; i < restaurants.length; i++) {
+// 		if (restaurants[i].id === parseInt(req.params.restaurantid, 10)) {
+// 			restaurants.splice(i, 1);
+// 			return res.json({
+// 				message: 'success',
+// 				error: false
+// 			});
+// 		}
+// 	}
+// 	return res.status(404).json({
+// 		message: 'User not found',
+// 		error: true
+// 	});
+// });
+
+module.exports = api;

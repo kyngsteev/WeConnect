@@ -1,21 +1,15 @@
-let bizModels = [
-	{
-		id: 1,
-		bizName: 'ABC Transport Limited',
-		bizAddress: '34 XYZ street, Lagos'
-	},
+const bizModels = require('./dummyData');
 
-	{
-		id: 2,
-		bizName: 'Iya Photo Images',
-		bizAddress: '1 Cyclone Causeway, Jos'
-	},
+const createBusiness = (name, address) => {
+	const newId = bizModels[(bizModels.length) - 1].id + 1;
+	const newUser = {
+		id: newId,
+		bizName: name,
+		bizAddress: address
+	};
+	// save the business
+	bizModels.push(newUser);
+	return bizModels[(bizModels.length) - 1];
+};
 
-	{
-		id: 3,
-		bizName: 'Emeka Metal Works',
-		bizAddress: '55, Jabulani Cresent, Enugu'
-	}
-];
-
-module.exports = bizModels;
+module.exports = createBusiness;
