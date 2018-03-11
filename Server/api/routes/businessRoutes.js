@@ -1,7 +1,7 @@
-// api/models/businessRoutes.js
-const myBusiness = require('../controllers/businessController');
-
 module.exports = (app) => {
+	// api/models/businessRoutes.js
+	const myBusiness = require('../controllers/businessController');
+
 	// our Routes
 	app.route('/businesses')
 		.get(myBusiness.getBusinesses)

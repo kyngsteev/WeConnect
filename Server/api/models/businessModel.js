@@ -1,4 +1,4 @@
-module.exports = [
+let bizModels = [
 	{
 		id: 1,
 		bizName: 'ABC Transport Limited',
@@ -17,3 +17,5 @@ module.exports = [
 		bizAddress: '55, Jabulani Cresent, Enugu'
 	}
 ];
+
+module.exports = bizModels;
