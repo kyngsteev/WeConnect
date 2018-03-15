@@ -4,7 +4,7 @@
   "description": "WeConnect - Business connect app",
   "main": "app.js",
   "scripts": {
-    "test": "mocha && zuul --local 1991 -- test.js",
+    "test": "mocha ./test --exit",
     "ci": "mocha -- test.js"
   },
   "dependencies": {
