@@ -4,8 +4,13 @@
   "description": "WeConnect - Business connect app",
   "main": "app.js",
   "scripts": {
-    "test": "mocha ./test --exit",
-    "ci": "mocha -- test.js"
+    "test": "mocha ./dist/test --exit",
+    "clean": "rm -rf dist",
+    "build": " npm run clean && mkdir dist && babel ../server -s -d dist --ignore node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyngsteev/WeConnect.git"
   },
   "dependencies": {
     "async": "*",
@@ -16,6 +21,10 @@
     "supertest": "^3.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.7.0",
