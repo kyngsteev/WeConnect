@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/kyngsteev/WeConnect.svg?branch=master)](https://travis-ci.org/kyngsteev/WeConnect)
+[![Coverage Status](https://coveralls.io/repos/github/kyngsteev/WeConnect/badge.svg)](https://coveralls.io/github/kyngsteev/WeConnect)
 
 # WeConnect
 WeConnect provides a platform that brings businesses and individuals together. This platform
