@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/kyngsteev/WeConnect.svg?branch=server)](https://travis-ci.org/kyngsteev/WeConnect)
+[![Maintainability](https://api.codeclimate.com/v1/badges/764a53df91e0582d1ab0/maintainability)](https://codeclimate.com/github/kyngsteev/WeConnect/maintainability)
+<a href="https://codeclimate.com/github/kyngsteev/WeConnect/test_coverage"><img src="https://api.codeclimate.com/v1/badges/764a53df91e0582d1ab0/test_coverage" /></a>
+
 # WeConnect
 WeConnect provides a platform that brings businesses and individuals together. This platform
 creates awareness for businesses and gives the users the ability to write reviews about the
