@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kyngsteev/WeConnect.svg?branch=master)](https://travis-ci.org/kyngsteev/WeConnect)
+[![Build Status](https://travis-ci.org/kyngsteev/WeConnect.svg?branch=server)](https://travis-ci.org/kyngsteev/WeConnect)
 [![Coverage Status](https://coveralls.io/repos/github/kyngsteev/WeConnect/badge.svg)](https://coveralls.io/github/kyngsteev/WeConnect)
 
 # WeConnect
