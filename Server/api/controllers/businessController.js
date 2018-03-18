@@ -24,8 +24,9 @@ api.post('/', (req, res) => {
 
 // '/v1/businesses' - Read
 api.get('/', (req, res) => {
-	if (req.query.location) {
-		const bizLocation = dummyModels.filter(model => model.location === req.query.location);
+	const reqBody = req.query;
+	if (reqBody.location) {
+		const bizLocation = dummyModels.filter(model => model.location === reqBody.location);
 		if (typeof bizLocation === 'undefined' || bizLocation.length === 0) {
 			res.status(404).json({
 				message: 'Not found',
@@ -34,8 +35,8 @@ api.get('/', (req, res) => {
 		} else {
 			res.json({ bizLocation });
 		}
-	} else if (req.query.category) {
-		const bizCategory = dummyModels.filter(model => model.category === req.query.category);
+	} else if (reqBody.category) {
+		const bizCategory = dummyModels.filter(model => model.category === reqBody.category);
 		if (typeof bizCategory === 'undefined' || bizCategory.length === 0) {
 			res.status(404).json({
 				message: 'Not found',
