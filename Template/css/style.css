@@ -1,7 +1,11 @@
 footer{
-  background-color: #eee;
+  background-color: darkslategrey;
   /* position: fixed;
   bottom: 0; */
+}
+
+h5 {
+  color: whitesmoke;
 }
 
 h5 > a, h5 > a:hover{
@@ -9,12 +13,16 @@ h5 > a, h5 > a:hover{
   color: darkslategray;
 }
 
+#footer-icon{
+  color: whitesmoke;
+}
+
 #main-jumbotron{
   height: 500px;
   background: linear-gradient(
     rgba(0, 0, 0, 0.45), 
     rgba(0, 0, 0, 0.45)
-  ), url('image/img1.jpg') no-repeat center center;
+  ), url('../image/img1.jpg') no-repeat center center;
   background-size: cover;
 }
 
@@ -112,4 +120,12 @@ h5 > a, h5 > a:hover{
 
 .description{
   font-size: 14px;
+}
+
+.text-muted {
+  color: seashell !important;
+}
+
+.location-text{
+  max-width: 70px !important;
 }
