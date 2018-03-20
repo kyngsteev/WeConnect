@@ -11,7 +11,7 @@
     "test": "mocha test --exit",
     "clean": "rm -rf dist",
     "postinstall": " npm run clean && mkdir dist && babel ./ -s -d dist --ignore node_modules",
-    "start": "node ./dist/app.js",
+    "start": "node app.js",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
