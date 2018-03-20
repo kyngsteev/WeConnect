@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "WeConnect - Business connect app",
   "main": "app.js",
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.7.x"
+  },
   "scripts": {
     "test": "mocha test --exit",
     "clean": "rm -rf dist",
-    "build": " npm run clean && mkdir dist && babel ./ -s -d dist --ignore node_modules",
+    "postinstall": " npm run clean && mkdir dist && babel ./ -s -d dist --ignore node_modules",
+    "start": "node app.js",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
