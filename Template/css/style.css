@@ -13,7 +13,11 @@ h5 > a, h5 > a:hover{
   color: darkslategray;
 }
 
-#footer-icon{
+#header{
+  background-color: darkslategrey !important;
+}
+
+#footer-icon, #icon-logo{
   color: whitesmoke;
 }
 
@@ -24,6 +28,7 @@ h5 > a, h5 > a:hover{
     rgba(0, 0, 0, 0.45)
   ), url('../image/img1.jpg') no-repeat center center;
   background-size: cover;
+  margin-top: -16px;
 }
 
 #jumbotron-content{
@@ -87,6 +92,10 @@ h5 > a, h5 > a:hover{
   width: 80%;
 }
 
+.form-title{
+  margin-bottom: 70px;
+}
+
 .jumbotron{
   height: 200px;
 }
@@ -116,6 +125,10 @@ h5 > a, h5 > a:hover{
 
 .card-img{
   height: 100%;
+}
+
+.card-body{
+  padding: 0.5rem;
 }
 
 .description{

@@ -12,13 +12,15 @@
     <title>Welcome to WeConnect</title>
   </head>
   <body>
-      <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
-        <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.html">WeConnect</a></h5>
-        <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-dark" href="register.html">Register a Business</a>
-        </nav>
-        <a class="btn btn-outline-primary mr-sm-2" href="signup.html">Sign up</a>
-        <a class="btn btn-outline-primary" href="login.html">Login</a>
+      <div class="container-fluid" id="header">
+        <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3">
+          <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.html" id="icon-logo">WeConnect</a></h5>
+          <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-white" href="register.html">Register a Business</a>
+          </nav>
+          <a class="btn btn-outline-light mr-sm-2" href="signup.html">Sign up</a>
+          <a class="btn btn-outline-light" href="login.html">Login</a>
+        </div>
       </div>
       <section class="jumbotron jumbotron-fluid" id="main-jumbotron">
           <div class="container">
@@ -26,8 +28,20 @@
                 <p class="display-4">Find Businesses in Nigeria</p>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control" id="search" type="search" placeholder="What are you looking for?">
-                    <input class="form-control" id="location" type="search" placeholder="Location">
-                    <input class="form-control mr-1" id="category" type="search" placeholder="Category">
+                    <select class="form-control" id="location">
+                      <option value="" disabled selected>Location...</option>
+                      <option>Lagos</option>
+                      <option>Abuja</option>
+                      <option>Kano</option>
+                      <option>Calabar</option>
+                    </select>
+                    <select class="form-control mr-1" id="category">
+                      <option value="" disabled selected>Category...</option>
+                      <option>Banking</option>
+                      <option>Education</option>
+                      <option>Plumbing</option>
+                      <option>Photography</option>
+                    </select>
                     <button class="btn btn-primary" id="submit" type="submit">Search</button>
                 </form>
             </div>
