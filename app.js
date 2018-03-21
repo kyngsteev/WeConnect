@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const swaggerJSDoc = require('swagger-jsdoc');
 
@@ -19,7 +20,7 @@ let options = {
 	// import swaggerDefinitions
 	swaggerDefinition,
 	// path to the API docs
-	apis: ['./api/routes/*.js'],
+	apis: ['./api/routes/businessRoutes.js'],
 };
 
 // initialize swagger-jsdoc
@@ -32,6 +33,10 @@ app.get('/swagger.json', (req, res) => {
 });
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// expose a static directory
+app.use(express.static(path.resolve(__dirname, './public')));
 
 app.use(require('./api/routes/businessRoutes'));
 

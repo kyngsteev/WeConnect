@@ -5,7 +5,60 @@ const createBusiness = require('../models/businessModel');
 
 let api = express.Router();
 
-// '/v1/businesses' - Register business
+/**
+ * @swagger
+ * definitions:
+ *   Business:
+ *     properties:
+ *       name:
+ *         type: string
+ *       address:
+ *         type: string
+ *       location:
+ *         type: string
+ *       category:
+ *         type: string
+ * 			 review:
+ * 				 parameters:
+ *       - name: review
+ *         description: Reviews object
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Reviews'
+ */
+
+/**
+ * @swagger
+ * definitions:
+ *   Reviews:
+ *     properties:
+ *       title:
+ *         type: string
+ *       description:
+ *         type: string
+ */
+
+/**
+ * @swagger
+ * /v1/businesses:
+ *   post:
+ *     tags:
+ *       - businesses
+ *     description: Creates a new business
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: business
+ *         description: Business object
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Business'
+ *     responses:
+ *       201:
+ *         description: Successfully created
+ */
 api.post('/', (req, res) => {
 	if (!req.body.name) {
 		return res.status(400).json({
@@ -22,7 +75,21 @@ api.post('/', (req, res) => {
 	return res.status(201).json(newBiz);
 });
 
-// '/v1/businesses' - Read
+/**
+ * @swagger
+ * /v1/businesses:
+ *   get:
+ *     tags:
+ *       - Businesses
+ *     description: Returns all businesses
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: An array of businesses
+ *         schema:
+ *           $ref: '#/definitions/Business'
+ */
 api.get('/', (req, res) => {
 	const reqBody = req.query;
 	if (reqBody.location) {
@@ -50,7 +117,27 @@ api.get('/', (req, res) => {
 	}
 });
 
-// '/v1/businesses/:businessId' - Get 1 record
+/**
+ * @swagger
+ * /v1/businesses/{id}:
+ *   get:
+ *     tags:
+ *       - Businesses
+ *     description: Returns a single Business
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: Business id
+ *         in: path
+ *         required: true
+ *         type: integer
+ *     responses:
+ *       200:
+ *         description: A single business
+ *         schema:
+ *           $ref: '#/definitions/Business'
+ */
 api.get('/:businessId', (req, res) => {
 	for (let dummyData of dummyModels) {
 		if (dummyData.id === parseInt(req.params.businessId, 10)) {
@@ -67,7 +154,24 @@ api.get('/:businessId', (req, res) => {
 	});
 });
 
-// '/v1/businesses/:businessId' - Update
+/**
+ * @swagger
+ * /v1/businesses/{id}:
+ *   put:
+ *     tags: Businesses
+ *     description: Updates a single business
+ *     produces: application/json
+ *     parameters:
+ *       name: business
+ *       in: body
+ *       description: Fields for the Business resource
+ *       schema:
+ *         type: array
+ *         $ref: '#/definitions/Business'
+ *     responses:
+ *       200:
+ *         description: Successfully updated
+ */
 api.put('/:businessId', (req, res) => {
 	for (let dummyData of dummyModels) {
 		if (dummyData.id === parseInt(req.params.businessId, 10)) {
@@ -84,7 +188,25 @@ api.put('/:businessId', (req, res) => {
 	});
 });
 
-// '/v1/businesses/:businessId' - Delete
+/**
+ * @swagger
+ * /v1/businesses/{id}:
+ *   delete:
+ *     tags:
+ *       - Businesses
+ *     description: Deletes a single business
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: Business id
+ *         in: path
+ *         required: true
+ *         type: integer
+ *     responses:
+ *       200:
+ *         description: Successfully deleted
+ */
 api.delete('/:businessId', (req, res) => {
 	for (let i = 0; i < dummyModels.length; i += 1) {
 		if (dummyModels[i].id === parseInt(req.params.businessId, 10)) {
@@ -149,16 +271,6 @@ api.post('/:businessId/reviews', (req, res) => {
 	return res.status(404).json({
 		message: 'User not found',
 		error: true
-	});
-});
-
-// '/v1/businesses?location=<location>' - Read
-api.get('/', (req, res) => {
-	const bizLocation = dummyModels.filter(dummyModel => dummyModel.location === req.query.location);
-	console.log(req.query.location);
-	res.json({
-		bizLocation,
-		error: false
 	});
 });
 
