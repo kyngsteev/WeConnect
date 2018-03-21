@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 app.use(require('./api/routes/businessRoutes'));
 
-app.listen('process.env.PORT || 3000', () => {
+app.listen('3000', () => {
 	console.log('App running on port 3000');
 });
 
