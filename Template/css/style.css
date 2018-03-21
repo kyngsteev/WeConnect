@@ -85,7 +85,7 @@ h5 > a, h5 > a:hover{
 }
 
 #register-section{
-  margin: 100px auto;
+  margin: 50px auto;
 }
 
 .form-inline{
@@ -93,7 +93,7 @@ h5 > a, h5 > a:hover{
 }
 
 .form-title{
-  margin-bottom: 70px;
+  margin: 50px 0;
 }
 
 .jumbotron{
@@ -141,4 +141,12 @@ h5 > a, h5 > a:hover{
 
 .location-text{
   max-width: 70px !important;
+}
+
+.listTitle{  
+  color: #333 !important;
+}
+
+.listingItem{
+  margin: 30px 0;
 }
