@@ -1,3 +1,4 @@
+const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -7,8 +8,10 @@ app.use(bodyParser.json());
 
 app.use(require('./api/routes/businessRoutes'));
 
-app.listen('3000', () => {
-	console.log('App running on port 3000');
+app.set('port', process.env.PORT || 3000);
+
+http.createServer(app).listen(app.get('port'), () => {
+	console.log(`Express server listening on port ${app.get('port')}`);
 });
 
 module.exports = app;
