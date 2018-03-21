@@ -1,8 +1,8 @@
-let bizModels = [
+let businessModels = [
 	{
 		id: 1,
-		bizName: 'ABC Transport Limited',
-		bizAddress: '34 XYZ street, Lagos',
+		name: 'ABC Transport Limited',
+		address: '34 XYZ street, Lagos',
 		location: 'Lagos',
 		category: 'Transprotation',
 		review: [
@@ -16,8 +16,8 @@ let bizModels = [
 
 	{
 		id: 2,
-		bizName: 'Iya Photo Images',
-		bizAddress: '1 Cyclone Causeway, Jos',
+		name: 'Iya Photo Images',
+		address: '1 Cyclone Causeway, Jos',
 		location: 'Jos',
 		category: 'Photography',
 		review: [
@@ -31,8 +31,8 @@ let bizModels = [
 
 	{
 		id: 3,
-		bizName: 'Emeka Metal Works',
-		bizAddress: '55, Jabulani Cresent, Enugu',
+		name: 'Emeka Metal Works',
+		address: '55, Jabulani Cresent, Enugu',
 		location: 'Enugu',
 		category: 'Metal Craft',
 		review: [
@@ -45,4 +45,4 @@ let bizModels = [
 	}
 ];
 
-module.exports = bizModels;
+module.exports = businessModels;

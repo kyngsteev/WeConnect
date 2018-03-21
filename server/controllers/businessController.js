@@ -1,12 +1,13 @@
 const express = require('express');
-const dummyModels = require('../models/dummyData');
+const businessDataModels = require('../data/businessData');
 const createBusiness = require('../models/businessModel');
-
 
 let api = express.Router();
 
 // '/v1/businesses' - Register business
 api.post('/', (req, res) => {
+	let newBusiness, business;
+
 	if (!req.body.name) {
 		return res.status(400).json({
 			message: 'Bad Request: name missing',
@@ -18,92 +19,104 @@ api.post('/', (req, res) => {
 			error: true
 		});
 	}
-	const newBiz = createBusiness(req.body.name, req.body.address);
-	return res.status(201).json(newBiz);
+
+	newBusiness = createBusiness(
+		req.body.name, req.body.address,
+		req.body.location, req.body.category, req.body.review
+	);
+	businessDataModels.push(newBusiness);
+	business = businessDataModels[(businessDataModels.length) - 1];
+	return res.status(201).json(business);
 });
 
 // '/v1/businesses' - Read
 api.get('/', (req, res) => {
 	const reqBody = req.query;
 	if (reqBody.location) {
-		const bizLocation = dummyModels.filter(model => model.location === reqBody.location);
-		if (typeof bizLocation === 'undefined' || bizLocation.length === 0) {
+		const businessLocation = businessDataModels.filter(m => m.location === reqBody.location);
+		if (typeof businessLocation === 'undefined' || businessLocation.length === 0) {
 			res.status(404).json({
-				message: 'Not found',
+				message: 'Business not found',
 				error: true
 			});
 		} else {
-			res.json({ bizLocation });
+			res.json({ businessLocation });
 		}
 	} else if (reqBody.category) {
-		const bizCategory = dummyModels.filter(model => model.category === reqBody.category);
-		if (typeof bizCategory === 'undefined' || bizCategory.length === 0) {
+		const businessCategory = businessDataModels.filter(m => m.category === reqBody.category);
+		if (typeof businessCategory === 'undefined' || businessCategory.length === 0) {
 			res.status(404).json({
-				message: 'Not found',
+				message: 'Business not found',
 				error: true
 			});
 		} else {
-			res.json({ bizCategory });
+			res.json({ businessCategory });
 		}
 	} else {
-		res.json({ dummyModels,	error: false });
+		res.json({ businessDataModels,	error: false });
 	}
 });
 
 // '/v1/businesses/:businessId' - Get 1 record
 api.get('/:businessId', (req, res) => {
-	for (let dummyData of dummyModels) {
-		if (dummyData.id === parseInt(req.params.businessId, 10)) {
+	for (let businessDataModel of businessDataModels) {
+		if (businessDataModel.id === parseInt(req.params.businessId, 10)) {
 			return res.json({
-				dummyData,
+				businessDataModel,
 				message: 'success',
 				error: false
 			});
 		}
 	}
 	return res.status(404).json({
-		message: 'User not found',
+		message: 'Business not found',
 		error: true
 	});
 });
 
 // '/v1/businesses/:businessId' - Update
 api.put('/:businessId', (req, res) => {
-	for (let dummyData of dummyModels) {
-		if (dummyData.id === parseInt(req.params.businessId, 10)) {
-			dummyData.bizName = req.body.name;
+	let request = req.body;
+	for (let businessDataModel of businessDataModels) {
+		if (businessDataModel.id === parseInt(req.params.businessId, 10)) {
+			businessDataModel.name = request.name;
+			businessDataModel.address = request.address;
+			businessDataModel.location = request.location;
+			businessDataModel.category = request.category;
+			businessDataModel.review = request.review;
 			return res.json({
-				message: 'success',
+				businessDataModel,
+				message: 'Business updated',
 				error: false
 			});
 		}
 	}
 	return res.status(404).json({
-		message: 'User not found',
+		message: 'Business not found',
 		error: true
 	});
 });
 
 // '/v1/businesses/:businessId' - Delete
 api.delete('/:businessId', (req, res) => {
-	for (let i = 0; i < dummyModels.length; i += 1) {
-		if (dummyModels[i].id === parseInt(req.params.businessId, 10)) {
-			dummyModels.splice(i, 1);
+	for (let i = 0; i < businessDataModels.length; i += 1) {
+		if (businessDataModels[i].id === parseInt(req.params.businessId, 10)) {
+			businessDataModels.splice(i, 1);
 			return res.json({
-				message: 'success',
+				message: 'Business record successfully deleted',
 				error: false
 			});
 		}
 	}
 	return res.status(404).json({
-		message: 'User not found',
+		message: 'Business not found',
 		error: true
 	});
 });
 
 // '/v1/businesses/:businessId/reviews' - Get reviews
 api.get('/:businessId/reviews', (req, res) => {
-	for (let dummyData of dummyModels) {
+	for (let dummyData of businessDataModels) {
 		if (dummyData.id === parseInt(req.params.businessId, 10)) {
 			const { review } = dummyData;
 			return res.json({
@@ -114,14 +127,14 @@ api.get('/:businessId/reviews', (req, res) => {
 		}
 	}
 	return res.status(404).json({
-		message: 'User not found',
+		message: 'Review not found',
 		error: true
 	});
 });
 
 // '/v1/businesses/:businessId/reviews' - Post review
 api.post('/:businessId/reviews', (req, res) => {
-	for (let dummyData of dummyModels) {
+	for (let dummyData of businessDataModels) {
 		if (dummyData.id === parseInt(req.params.businessId, 10)) {
 			const { review } = dummyData;
 			const { title, description } = req.body;
@@ -147,17 +160,18 @@ api.post('/:businessId/reviews', (req, res) => {
 		}
 	}
 	return res.status(404).json({
-		message: 'User not found',
+		message: 'Review not found',
 		error: true
 	});
 });
 
 // '/v1/businesses?location=<location>' - Read
 api.get('/', (req, res) => {
-	const bizLocation = dummyModels.filter(dummyModel => dummyModel.location === req.query.location);
+	const businessLocation = businessDataModels
+		.filter(dummyModel => dummyModel.location === req.query.location);
 	console.log(req.query.location);
 	res.json({
-		bizLocation,
+		businessLocation,
 		error: false
 	});
 });
