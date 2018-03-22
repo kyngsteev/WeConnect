@@ -1,7 +1,6 @@
 footer{
   background-color: darkslategrey;
-  /* position: fixed;
-  bottom: 0; */
+  padding-top: 3rem !important;
 }
 
 h5 {
@@ -11,6 +10,23 @@ h5 {
 h5 > a, h5 > a:hover{
   text-decoration: none;
   color: darkslategray;
+}
+
+#inputDescription{
+  height: 150px !important;
+}
+
+::-webkit-input-placeholder {
+  line-height:100px;
+}
+::-moz-placeholder {
+  line-height:100px;
+}
+:-ms-input-placeholder {
+  line-height:100px;
+}
+:-moz-placeholder {
+  line-height:100px;
 }
 
 #header{
@@ -96,6 +112,10 @@ h5 > a, h5 > a:hover{
   margin: 50px 0;
 }
 
+.form-label-group{
+  margin: 10px 0;
+}
+
 .jumbotron{
   height: 200px;
 }
@@ -105,13 +125,13 @@ h5 > a, h5 > a:hover{
 }
 
 .form-control{
-  height: 30px;
+  height: 50px !important;
   font-size: 14px;
   vertical-align: middle;
   background-color: whitesmoke;
   border: 1px solid #dcdfe1;
   border-radius: 0px;
-  padding: 24px 12px;
+  /* padding: 24px 12px; */
 }
 
 .business-list{
