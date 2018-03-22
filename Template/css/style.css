@@ -12,10 +12,6 @@ h5 > a, h5 > a:hover{
   color: darkslategray;
 }
 
-#inputDescription{
-  height: 150px !important;
-}
-
 ::-webkit-input-placeholder {
   line-height:100px;
 }
@@ -103,6 +99,15 @@ h5 > a, h5 > a:hover{
 #register-section{
   margin: 50px auto;
 }
+
+#inputDescription{
+  height: 150px !important;
+}
+
+#profileDescription, #profileReview{
+  padding: 50px;
+}
+
 
 .form-inline{
   width: 80%;
