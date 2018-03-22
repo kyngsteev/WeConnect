@@ -8,12 +8,12 @@ let api = express.Router();
 api.post('/', (req, res) => {
 	let newBusiness, business;
 
-	if (!req.body.name) {
+	if (!req.body.name || typeof req.body.name !== 'string') {
 		return res.status(400).json({
 			message: 'Bad Request: name missing',
 			error: true
 		});
-	} else if (!req.body.address) {
+	} else if (!req.body.address || typeof req.body.address !== 'string') {
 		return res.status(400).json({
 			message: 'Bad Request: address missing',
 			error: true

@@ -6,7 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use(require('./server/routes/businessRoutes'));
+app.use(require('./server/routes/appRoutes'));
 
 app.set('port', process.env.PORT || 3000);
 
