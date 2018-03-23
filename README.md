@@ -2,6 +2,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/764a53df91e0582d1ab0/maintainability)](https://codeclimate.com/github/kyngsteev/WeConnect/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/kyngsteev/WeConnect/badge.svg?branch=server)](https://coveralls.io/github/kyngsteev/WeConnect?branch=server)
 
+
 # WeConnect
 WeConnect provides a platform that brings businesses and individuals together. This platform
 creates awareness for businesses and gives the users the ability to write reviews about the
