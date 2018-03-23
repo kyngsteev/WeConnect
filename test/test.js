@@ -19,7 +19,7 @@ let business = {
 
 describe('Users Test', () => {
 	describe('POST /auth/signup', () => {
-		it('should register a business', () => {
+		it('should register a user on sign up', () => {
 			const newUser = {
 				name: 'jubril omotunde',
 				email: 'jaybee@gmail.com',
@@ -34,7 +34,7 @@ describe('Users Test', () => {
 					res.statusCode.should.equal(200);
 				});
 		});
-		it('should return bad request error', () => {
+		it('should return bad request if no password', () => {
 			const newUser = {
 				name: 'jubril omotunde',
 				email: 'jaybee@gmail.com'
@@ -71,7 +71,7 @@ describe('Users Test', () => {
 
 describe('Business Test', () => {
 	describe('GET v1/businesses', () => {
-		it('Get\'s all businesses', () => {
+		it('should get\'s all businesses', () => {
 			request(app).get('/')
 				.expect((res) => {
 					res.body.should.be.a('object');
