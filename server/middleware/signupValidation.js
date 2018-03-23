@@ -1,14 +1,6 @@
 const validateUserSignUp = (req, res, next) => {
-	const {
-		password,
-		name,
-		email,
-	} = req.body;
-	if (
-		!password ||
-    !name ||
-    !email
-	) {
+	const { password,	name,	email	} = req.body;
+	if (!password || !name || !email) {
 		return res.status(400)
 			.json({
 				message: 'All or some of the field is/are undefined',
