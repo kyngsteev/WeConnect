@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/kyngsteev/WeConnect.svg?branch=server)](https://travis-ci.org/kyngsteev/WeConnect)
 [![Maintainability](https://api.codeclimate.com/v1/badges/764a53df91e0582d1ab0/maintainability)](https://codeclimate.com/github/kyngsteev/WeConnect/maintainability)
-<a href="https://codeclimate.com/github/kyngsteev/WeConnect/test_coverage"><img src="https://api.codeclimate.com/v1/badges/764a53df91e0582d1ab0/test_coverage" /></a>
+[![Coverage Status](https://coveralls.io/repos/github/kyngsteev/WeConnect/badge.svg?branch=server)](https://coveralls.io/github/kyngsteev/WeConnect?branch=server)
 
 # WeConnect
 WeConnect provides a platform that brings businesses and individuals together. This platform
