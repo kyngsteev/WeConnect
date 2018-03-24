@@ -4,6 +4,13 @@ const createBusiness = require('../models/businessModel');
 
 let api = express.Router();
 
+let checkReview = (review) => {
+	if (review && review.length) {
+		return review;
+	}
+	return [];
+};
+
 // '/v1/businesses' - Register business
 api.post('/', (req, res) => {
 	let newBusiness, business;
@@ -20,9 +27,10 @@ api.post('/', (req, res) => {
 		});
 	}
 
+	let getReview = checkReview(req.body.review);
 	newBusiness = createBusiness(
 		req.body.name, req.body.address,
-		req.body.location, req.body.category, req.body.review
+		req.body.location, req.body.category, getReview
 	);
 	businessDataModels.push(newBusiness);
 	business = businessDataModels[(businessDataModels.length) - 1];
@@ -134,12 +142,20 @@ api.get('/:businessId/reviews', (req, res) => {
 
 // '/v1/businesses/:businessId/reviews' - Post review
 api.post('/:businessId/reviews', (req, res) => {
+	let newId;
+
 	for (let dummyData of businessDataModels) {
 		if (dummyData.id === parseInt(req.params.businessId, 10)) {
-			const { review } = dummyData;
-			const { title, description } = req.body;
-			const newId = review[(review.length) - 1].id + 1;
-			const newReview = {
+			let { review } = dummyData;
+			let { title, description } = req.body;
+
+			if (review.length === 0) {
+				newId = 1;
+			} else {
+				newId = review[(review.length) - 1].id + 1;
+			}
+
+			let newReview = {
 				id: newId,
 				title,
 				description
