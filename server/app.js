@@ -6,7 +6,14 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use(require('./server/routes/appRoutes'));
+app.use(require('./routes/appRoutes'));
+
+app.use(express.static(`${__dirname}/public`));
+
+// serve api docs
+app.get('/', (req, res) => {
+	res.sendFile('index.htm');
+});
 
 app.set('port', process.env.PORT || 3000);
 
