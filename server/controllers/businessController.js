@@ -1,6 +1,6 @@
 const express = require('express');
 const businessDataModels = require('../data/businessData');
-const createBusiness = require('../models/businessModel');
+const createBusiness = require('../dummy-models/businessModel');
 
 let api = express.Router();
 

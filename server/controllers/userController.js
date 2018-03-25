@@ -1,6 +1,6 @@
 const express = require('express');
 const userDataModels = require('../data/userData');
-const usersModel = require('../models/userModel');
+const usersModel = require('../dummy-models/userModel');
 const validateSignUp = require('../middleware/signupValidation');
 const validateSignIn = require('../middleware/signInValidation');
 
