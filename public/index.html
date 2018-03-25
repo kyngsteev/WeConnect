@@ -1,0 +1,636 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>WeConnect Api Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#businesses" class="toc-h1 toc-link" data-title="businesses">Businesses</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-business" class="toc-h2 toc-link" data-title="create-a-business">Create a Business</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-businesses" class="toc-h2 toc-link" data-title="get-all-businesses">Get all Businesses</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-business" class="toc-h2 toc-link" data-title="get-a-specific-business">Get a Specific Business</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-specific-business" class="toc-h2 toc-link" data-title="update-a-specific-business">Update a Specific Business</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-business" class="toc-h2 toc-link" data-title="delete-a-specific-business">Delete a Specific Business</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#reviews" class="toc-h1 toc-link" data-title="reviews">Reviews</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#review-a-business" class="toc-h2 toc-link" data-title="review-a-business">Review a Business</a>
+                  </li>
+                  <li>
+                    <a href="#get-reviews" class="toc-h2 toc-link" data-title="get-reviews">Get Reviews</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sign-up" class="toc-h2 toc-link" data-title="sign-up">Sign Up</a>
+                  </li>
+                  <li>
+                    <a href="#login" class="toc-h2 toc-link" data-title="login">Login</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the WeConnect API Reference! You can use our API to access WeConnect API endpoints, which can get information on various businesses and their reviews in our database.</p>
+<h1 id='businesses'>Businesses</h1><h2 id='create-a-business'>Create a Business</h2>
+<blockquote>
+<p>HTTP Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"somename"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some address"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some state"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some business category"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>HTTP Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"somename"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some address"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some state"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some business category"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some business review"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a business entity.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST http://example.com/v1/businesses</code></p>
+<h3 id='http-response'>HTTP Response</h3>
+<p><code>STATUS - 201 Created</code><br>
+<code>BODY - application/json</code></p>
+
+<aside class="success">
+Remember — a good business is an authenticated business!
+</aside>
+<h2 id='get-all-businesses'>Get all Businesses</h2>
+<blockquote>
+<p>HTTP Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"businessDataModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeName"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeAddress"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeLocation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeCategory"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeName"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeAddress"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeLocation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeCategory"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all business entity.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/businesses</code>  </p>
+<h3 id='queries'>Queries</h3>
+<p><code>By Location: GET http://example.com/v1/businesses?location=_location</code><br>
+<code>By Category: GET http://example.com/v1/businesses?category=_category</code></p>
+<h3 id='http-response-2'>HTTP Response</h3>
+<p><code>STATUS - 200 Ok</code><br>
+<code>BODY - application/json</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>_location</td>
+<td>location to query</td>
+<td>If supplied, the result contains only businesses from the location.</td>
+</tr>
+<tr>
+<td>_category</td>
+<td>category to query</td>
+<td>If supplied, the result contains only businesses from that category.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-business'>Get a Specific Business</h2>
+<blockquote>
+<p>HTTP Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"businessDataModel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;Id&gt;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeName"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeAddress"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeLocation"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeCategory"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns a specific business.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/businesses/&lt;Id&gt;</code></p>
+<h3 id='http-response-3'>HTTP Response</h3>
+<p><code>STATUS - 200 Ok</code><br>
+<code>BODY - application/json</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Id</td>
+<td>The Id of the business to return</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-specific-business'>Update a Specific Business</h2>
+<blockquote>
+<p>HTTP Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeName"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeAddress"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeLocation"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeCategory"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>HTTP Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"businessDataModel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;Id&gt;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeName"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeAddress"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeLocation"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SomeCategory"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"review"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business Updated"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint updates a specific business.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT http://example.com/v1/businesses/&lt;Id&gt;</code></p>
+<h3 id='http-response-4'>HTTP Response</h3>
+<p><code>STATUS - 200 Ok</code><br>
+<code>BODY - application/json</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Id</td>
+<td>The Id of the business to be updated</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-business'>Delete a Specific Business</h2>
+<blockquote>
+<p>HTTP Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business record successfully deleted"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint deletes a specific business.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE http://example.com/v1/businesses/&lt;Id&gt;</code></p>
+<h3 id='http-response-5'>HTTP Response</h3>
+<p><code>STATUS - 200 Ok</code><br>
+<code>BODY - application/json</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Id</td>
+<td>The Id of the business to be deleted</td>
+</tr>
+</tbody></table>
+<h1 id='reviews'>Reviews</h1><h2 id='review-a-business'>Review a Business</h2>
+<blockquote>
+<p>HTTP Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some title"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>HTTP Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some title"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a review for a business.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST http://example.com/v1/businesses/&lt;Id&gt;/reviews</code></p>
+<h3 id='http-response-6'>HTTP Response</h3>
+<p><code>STATUS - 201 Created</code><br>
+<code>BODY - application/json</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Id</td>
+<td>The Id of the business to be reviewed</td>
+</tr>
+</tbody></table>
+<h2 id='get-reviews'>Get Reviews</h2>
+<blockquote>
+<p>HTTP Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some title"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some description"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some title"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some description"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all reviews for a business entity.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/businesses/&lt;Id&gt;/reviews</code></p>
+<h3 id='http-response-7'>HTTP Response</h3>
+<p><code>STATUS - 200 Ok</code><br>
+<code>BODY - application/json</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Id</td>
+<td>The Id of the business reviewed</td>
+</tr>
+</tbody></table>
+<h1 id='users'>Users</h1><h2 id='sign-up'>Sign Up</h2>
+<blockquote>
+<p>HTTP Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user email"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user password"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>HTTP Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user email"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user password"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new user.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST http://example.com/v1/auth/signup</code></p>
+<h3 id='http-response-8'>HTTP Response</h3>
+<p><code>STATUS - 201 Created</code><br>
+<code>BODY - application/json</code></p>
+<h2 id='login'>Login</h2>
+<blockquote>
+<p>HTTP Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user email"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user password"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>HTTP Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User successfully signed in"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint logs in a user.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/auth/login</code></p>
+<h3 id='http-response-9'>HTTP Response</h3>
+<p><code>STATUS - 200 Ok</code><br>
+<code>BODY - application/json</code></p>
+<h1 id='errors'>Errors</h1>
+<p>The WeConnect API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
