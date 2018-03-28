@@ -32,6 +32,13 @@ api.post('/', (req, res) => {
 		req.body.name, req.body.address,
 		req.body.location, req.body.category, getReview
 	);
+
+	let businessObject = businessDataModels.filter(m => m.name === newBusiness.name);
+	if (businessObject.length !== 0) {
+		return res.status(400).json({
+			message: 'Business already exist',
+		});
+	}
 	businessDataModels.push(newBusiness);
 	business = businessDataModels[(businessDataModels.length) - 1];
 	return res.status(201).json(business);
@@ -41,7 +48,8 @@ api.post('/', (req, res) => {
 api.get('/', (req, res) => {
 	const reqBody = req.query;
 	if (reqBody.location) {
-		const businessLocation = businessDataModels.filter(m => m.location === reqBody.location);
+		const businessLocation = businessDataModels
+			.filter(m => m.location.toLowerCase() === reqBody.location.toLowerCase());
 		if (typeof businessLocation === 'undefined' || businessLocation.length === 0) {
 			res.status(404).json({
 				message: 'Business not found',
@@ -51,7 +59,8 @@ api.get('/', (req, res) => {
 			res.json({ businessLocation });
 		}
 	} else if (reqBody.category) {
-		const businessCategory = businessDataModels.filter(m => m.category === reqBody.category);
+		const businessCategory = businessDataModels
+			.filter(m => m.category.toLowerCase() === reqBody.category.toLowerCase());
 		if (typeof businessCategory === 'undefined' || businessCategory.length === 0) {
 			res.status(404).json({
 				message: 'Business not found',
@@ -77,6 +86,7 @@ api.get('/:businessId', (req, res) => {
 		}
 	}
 	return res.status(404).json({
+		businessDataModel,
 		message: 'Business not found',
 		error: true
 	});
