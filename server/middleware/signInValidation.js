@@ -1,18 +1,16 @@
+const regex = /^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$', 'g'/;
+
 const validateUserSignIn = (req, res, next) => {
-	if (!req.body.password && !req.body.email) {
+	const { email, password } = req.body;
+	if (!password && !email) {
 		return res.status(400)
 			.json({
-				message: 'All or some of the field is/are undefined',
+				message: 'All or some of the field is/are missing',
 			});
 	}
-	if (!req.body.email) {
+	if (!email || !password) {
 		return res.status(400).send({
-			message: 'email is can not be empty',
-		});
-	}
-	if (!req.body.password) {
-		return res.status(400).send({
-			message: 'please enter a password ',
+			message: 'Email or password cannot be empty',
 		});
 	}
 	next();

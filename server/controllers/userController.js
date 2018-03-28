@@ -8,9 +8,9 @@ let api = express.Router();
 
 // 'v1/auth/signup' - Register a new User
 api.post('/signup', validateSignUp, (req, res) => {
-	let createUser, newUser, getUser;
-	getUser = userDataModels.filter(m => m.email === req.body.email);
-	if (typeof getUser !== 'undefined' && getUser.length !== 0) {
+	let createUser, newUser, user;
+	user = userDataModels.filter(m => m.email === req.body.email);
+	if (typeof user !== 'undefined' && user.length !== 0) {
 		res.status(404).json({
 			message: 'User Already Exists',
 			error: true
@@ -19,14 +19,17 @@ api.post('/signup', validateSignUp, (req, res) => {
 	createUser = usersModel(req.body.name, req.body.email, req.body.password);
 	userDataModels.push(createUser);
 	newUser = userDataModels[(userDataModels.length - 1)];
-	return res.status(201).json(newUser);
+	return res.status(201).json({
+		message: 'User registered successfully',
+		newUser
+	});
 });
 
 // 'v1/auth/login' - User Sign In
 api.post('/login', validateSignIn, (req, res) => {
-	let getUser = userDataModels.filter(m => m.email === req.body.email);
-	if (typeof getUser !== 'undefined' || getUser.length !== 0) {
-		if (getUser[0].password === req.body.password) {
+	let user = userDataModels.filter(m => m.email === req.body.email);
+	if (typeof user !== 'undefined' || user.length !== 0) {
+		if (user[0].password === req.body.password) {
 			return res.status(200).json({
 				message: 'User successfully signed in',
 				error: false
