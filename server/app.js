@@ -3,8 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(require('./routes/appRoutes'));
 
@@ -15,7 +15,14 @@ app.get('/', (req, res) => {
 	res.sendFile('index.htm');
 });
 
-app.set('port', process.env.PORT || 3000);
+// catch all other routes
+app.get('*', (req, res) => {
+	res.status(200).send({
+		message: 'Welcome to the world on nothingness'
+	});
+});
+
+app.set('port', parseInt(process.env.PORT, 10) || 3000);
 
 http.createServer(app).listen(app.get('port'), () => {
 	console.log(`Express server listening on port ${app.get('port')}`);
