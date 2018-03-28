@@ -55,7 +55,7 @@ module.exports = {
 	// List all Businesses by location
 	listByLocation(req, res) {
 		return models.Business
-			.findAll({ where: { location: req.params.location } })
+			.findAll(req.params.location)
 			.then(business => res.status(200).send(business))
 			.catch(error => res.status(400).send(error));
 	},
