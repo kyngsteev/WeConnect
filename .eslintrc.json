@@ -23,6 +23,7 @@
     "import/no-dynamic-require": 0,
     "import/no-unresolved": [2, { "commonjs": false }],
     "indent":[2, "tab"],
+    "max-len":"off",
     "no-tabs": 0,
     "no-console":"off",
     "no-undef":"off",
