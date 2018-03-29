@@ -16,11 +16,11 @@ app.get('/', (req, res) => {
 });
 
 // catch all other routes
-app.get('*', (req, res) => {
-	res.status(200).send({
-		message: 'Welcome to the world on nothingness'
-	});
-});
+// app.get('*', (req, res) => {
+// 	res.status(200).send({
+// 		message: 'Welcome to the world on nothingness'
+// 	});
+// });
 
 app.set('port', process.env.PORT || 3000);
 
