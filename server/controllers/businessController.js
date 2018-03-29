@@ -4,6 +4,13 @@ const createBusiness = require('../models/businessModel');
 
 let api = express.Router();
 
+let checkReview = (review) => {
+	if (review && review.length) {
+		return review;
+	}
+	return [];
+};
+
 // '/v1/businesses' - Register business
 api.post('/', (req, res) => {
 	let newBusiness, business;
@@ -20,10 +27,18 @@ api.post('/', (req, res) => {
 		});
 	}
 
+	let getReview = checkReview(req.body.review);
 	newBusiness = createBusiness(
 		req.body.name, req.body.address,
-		req.body.location, req.body.category, req.body.review
+		req.body.location, req.body.category, getReview
 	);
+
+	let businessObject = businessDataModels.filter(m => m.name === newBusiness.name);
+	if (businessObject.length !== 0) {
+		return res.status(400).json({
+			message: 'Business already exist',
+		});
+	}
 	businessDataModels.push(newBusiness);
 	business = businessDataModels[(businessDataModels.length) - 1];
 	return res.status(201).json(business);
@@ -33,7 +48,8 @@ api.post('/', (req, res) => {
 api.get('/', (req, res) => {
 	const reqBody = req.query;
 	if (reqBody.location) {
-		const businessLocation = businessDataModels.filter(m => m.location === reqBody.location);
+		const businessLocation = businessDataModels
+			.filter(m => m.location.toLowerCase() === reqBody.location.toLowerCase());
 		if (typeof businessLocation === 'undefined' || businessLocation.length === 0) {
 			res.status(404).json({
 				message: 'Business not found',
@@ -43,7 +59,8 @@ api.get('/', (req, res) => {
 			res.json({ businessLocation });
 		}
 	} else if (reqBody.category) {
-		const businessCategory = businessDataModels.filter(m => m.category === reqBody.category);
+		const businessCategory = businessDataModels
+			.filter(m => m.category.toLowerCase() === reqBody.category.toLowerCase());
 		if (typeof businessCategory === 'undefined' || businessCategory.length === 0) {
 			res.status(404).json({
 				message: 'Business not found',
@@ -69,6 +86,7 @@ api.get('/:businessId', (req, res) => {
 		}
 	}
 	return res.status(404).json({
+		businessDataModel,
 		message: 'Business not found',
 		error: true
 	});
@@ -134,12 +152,20 @@ api.get('/:businessId/reviews', (req, res) => {
 
 // '/v1/businesses/:businessId/reviews' - Post review
 api.post('/:businessId/reviews', (req, res) => {
+	let newId;
+
 	for (let dummyData of businessDataModels) {
 		if (dummyData.id === parseInt(req.params.businessId, 10)) {
-			const { review } = dummyData;
-			const { title, description } = req.body;
-			const newId = review[(review.length) - 1].id + 1;
-			const newReview = {
+			let { review } = dummyData;
+			let { title, description } = req.body;
+
+			if (review.length === 0) {
+				newId = 1;
+			} else {
+				newId = review[(review.length) - 1].id + 1;
+			}
+
+			let newReview = {
 				id: newId,
 				title,
 				description
