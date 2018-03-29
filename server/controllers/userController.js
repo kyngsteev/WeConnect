@@ -16,7 +16,7 @@ api.post('/signup', validateSignUp, (req, res) => {
 			error: true
 		});
 	}
-	createUser = usersModel(req.body.firstName, req.body.surName, req.body.email, req.body.password);
+	createUser = usersModel(req.body.name, req.body.email, req.body.password);
 	userDataModels.push(createUser);
 	newUser = userDataModels[(userDataModels.length - 1)];
 	return res.status(201).json({
