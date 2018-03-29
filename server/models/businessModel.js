@@ -6,6 +6,7 @@ const createBusiness = (name, address, location, category, review) => {
 		id,
 		name,
 		address,
+		location,
 		category,
 		review
 	};

@@ -86,7 +86,7 @@ api.get('/:businessId', (req, res) => {
 		}
 	}
 	return res.status(404).json({
-		businessDataModel,
+		businessDataModel: [],
 		message: 'Business not found',
 		error: true
 	});

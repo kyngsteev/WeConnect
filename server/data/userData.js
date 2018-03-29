@@ -1,13 +1,15 @@
 let users = [
 	{
 		id: 1,
-		name: 'John Doe',
+		firstName: 'John',
+		surName: 'Doe',
 		email: 'johndoe@abc.com',
 		password: 'johndoe123'
 	},
 	{
 		id: 2,
-		name: 'Sarah Daniels',
+		firstName: 'Sarah',
+		surName: 'Daniels',
 		email: 'sarah_d@abc.com',
 		password: 'sarahdaniels1985'
 	}
