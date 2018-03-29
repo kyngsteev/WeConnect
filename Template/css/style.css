@@ -12,6 +12,10 @@ h5 > a, h5 > a:hover{
   color: darkslategray;
 }
 
+img{
+  max-width: 100% !important;
+}
+
 ::-webkit-input-placeholder {
   line-height:100px;
 }
@@ -34,7 +38,7 @@ h5 > a, h5 > a:hover{
 }
 
 #main-jumbotron{
-  height: 500px;
+  height: 630px;
   background: linear-gradient(
     rgba(0, 0, 0, 0.45), 
     rgba(0, 0, 0, 0.45)
@@ -44,7 +48,7 @@ h5 > a, h5 > a:hover{
 }
 
 #jumbotron-content{
-  margin: 70px auto;
+  margin: 140px auto;
 }
 
 #jumbotron-content > p{
@@ -108,8 +112,11 @@ h5 > a, h5 > a:hover{
   padding: 50px;
 }
 
+#listNav{
+  margin-top: 50px;
+}
 
-.form-inline{
+#searchForm{
   width: 80%;
 }
 
@@ -174,4 +181,47 @@ h5 > a, h5 > a:hover{
 
 .listingItem{
   margin: 30px 0;
+}
+
+@media screen and (max-width: 700px) {
+  #searchText {
+      font-size: 2rem;
+      margin: 0 auto 8px;
+  }
+  #searchForm{
+    display: block;
+    width: 100%;
+  }
+
+  #searchForm > input, #searchForm > select, #searchForm > button{
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  #topText{
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 768px){
+  #searchText {
+    font-size: 2.8rem;
+    margin: 0 auto 8px;
+  }
+  #topText{
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 991px){
+  #jumbotron-content, #jumbotron-content > p, #jumbotron-content > form{
+    width: 100%;
+  }
+
+  #jumbotron-content > p{
+    text-align: center;
+  }
 }

@@ -12,19 +12,29 @@
     <title>Listing Page</title>
   </head>
   <body>
-      <div class="container-fluid" id="header">
-        <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3">
-          <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.html" id="icon-logo">WeConnect</a></h5>
-          <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-white" href="register.html">Register a Business</a>
-          </nav>
-          <a class="btn btn-outline-light mr-sm-2" href="signup.html">Sign up</a>
-          <a class="btn btn-outline-light" href="login.html">Login</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">WeConnect</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav justify-content-center mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="p-2 text-white" href="register.html">Register a Business</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-outline-light mr-sm-2" href="signup.html">Sign up</a>
+                <a class="btn btn-outline-light" href="login.html">Login</a>
+            </form>
+          </div>
         </div>
-      </div>
+      </nav>
             
       <section class="container">
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light" id="listNav">
           <span class="navbar-brand h1">Category</span>
         </nav>
         <div class="col-md-10 col-lg-10 offset-md-1 offset-lg-1">
@@ -33,17 +43,15 @@
               <h5 class="listTitle"> Abe Welding Limited</h5>
             </div>
             <div class="card-body">
-              <div class="business-list">
-                <div class="row">
-                  <div class="col-3 listcard">
-                    <div class="card bg-dark text-white listcard">
-                      <img class="card-img" src="image/welder.jpg" alt="Card image">
-                    </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="card bg-dark text-white">
+                    <img class="card-img" src="image/welder.jpg" alt="Card image">
                   </div>
-                  <div class="col-8 listcard">
-                    <p class="description"><span><b>Description: </b></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro cumque natus, aperiam adipisci quas sapiente officiis suscipit explicabo? Nam ut impedit praesentium laudantium commodi temporibus cumque sunt ipsum fugit itaque.</p>
-                    <div><a href="profile.html" class="btn btn-primary btn-sm">Details</a>
-                    </div>
+                </div>
+                <div class="col-8">
+                  <p class="description"><span><b>Description: </b></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro cumque natus, aperiam adipisci quas sapiente officiis suscipit explicabo? Nam ut impedit praesentium laudantium commodi temporibus cumque sunt ipsum fugit itaque.</p>
+                  <div><a href="profile.html" class="btn btn-primary btn-sm">Details</a>
                   </div>
                 </div>
               </div>
@@ -53,47 +61,42 @@
             <div class="card-header">
               <h5 class="listTitle"> Abe Welding Limited</h5>
             </div>
-            <div class="card-body">
-              <div class="business-list">
-                <div class="row">
-                  <div class="col-3 listcard">
-                    <div class="card bg-dark text-white listcard">
-                      <img class="card-img" src="image/welder.jpg" alt="Card image">
-                    </div>
-                  </div>
-                  <div class="col-8 listcard">
-                    <p class="description"><span><b>Description: </b></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro cumque natus, aperiam adipisci quas sapiente officiis suscipit explicabo? Nam ut impedit praesentium laudantium commodi temporibus cumque sunt ipsum fugit itaque.</p>
-                    <div><a href="profile.html" class="btn btn-primary btn-sm">Details</a>
-                    </div>
-                  </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-4">
+                <div class="card bg-dark text-white">
+                  <img class="card-img" src="image/welder.jpg" alt="Card image">
+                </div>
+              </div>
+              <div class="col-8">
+                <p class="description"><span><b>Description: </b></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro cumque natus, aperiam adipisci quas sapiente officiis suscipit explicabo? Nam ut impedit praesentium laudantium commodi temporibus cumque sunt ipsum fugit itaque.</p>
+                <div><a href="profile.html" class="btn btn-primary btn-sm">Details</a>
                 </div>
               </div>
             </div>
+          </div>
           </div>
           <div class="card listingItem">
             <div class="card-header">
               <h5 class="listTitle"> Abe Welding Limited</h5>
             </div>
             <div class="card-body">
-              <div class="business-list">
                 <div class="row">
-                  <div class="col-3 listcard">
-                    <div class="card bg-dark text-white listcard">
+                  <div class="col-4">
+                    <div class="card bg-dark text-white">
                       <img class="card-img" src="image/welder.jpg" alt="Card image">
                     </div>
                   </div>
-                  <div class="col-8 listcard">
+                  <div class="col-8">
                     <p class="description"><span><b>Description: </b></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro cumque natus, aperiam adipisci quas sapiente officiis suscipit explicabo? Nam ut impedit praesentium laudantium commodi temporibus cumque sunt ipsum fugit itaque.</p>
                     <div><a href="profile.html" class="btn btn-primary btn-sm">Details</a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
           </div>             
       </section>
       
-      <footer class="container-fluid">
+      <footer class="container-fluid bg-dark">
           <div class="container">
             <div class="row">
               <div class="col-12 col-md">

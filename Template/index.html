@@ -12,44 +12,54 @@
     <title>Welcome to WeConnect</title>
   </head>
   <body>
-      <div class="container-fluid" id="header">
-        <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3">
-          <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.html" id="icon-logo">WeConnect</a></h5>
-          <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-white" href="register.html">Register a Business</a>
-          </nav>
-          <a class="btn btn-outline-light mr-sm-2" href="signup.html">Sign up</a>
-          <a class="btn btn-outline-light" href="login.html">Login</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">WeConnect</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav justify-content-center mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="p-2 text-white" href="register.html">Register a Business</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <a class="btn btn-outline-light mr-sm-2" href="signup.html">Sign up</a>
+              <a class="btn btn-outline-light" href="login.html">Login</a>
+          </form>
         </div>
       </div>
-      <section class="jumbotron jumbotron-fluid" id="main-jumbotron">
-          <div class="container">
-            <div class="row justify-content-md-center" id="jumbotron-content">
-                <p class="display-4">Find Businesses in Nigeria</p>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control" id="search" type="search" placeholder="What are you looking for?">
-                    <select class="form-control" id="location">
-                      <option value="" disabled selected>Location...</option>
-                      <option>Lagos</option>
-                      <option>Abuja</option>
-                      <option>Kano</option>
-                      <option>Calabar</option>
-                    </select>
-                    <select class="form-control mr-1" id="category">
-                      <option value="" disabled selected>Category...</option>
-                      <option>Banking</option>
-                      <option>Education</option>
-                      <option>Plumbing</option>
-                      <option>Photography</option>
-                    </select>
-                    <button class="btn btn-primary" id="submit" type="submit">Search</button>
-                </form>
-            </div>
+    </nav>
+    <section class="jumbotron jumbotron-fluid" id="main-jumbotron">
+        <div class="container">
+          <div class="row justify-content-md-center" id="jumbotron-content">
+              <p class="display-4" id="searchText">Find Businesses in Nigeria</p>
+              <form class="form-inline my-2 my-lg-0" id="searchForm">
+                  <input class="form-control" id="search" type="search" placeholder="What are you looking for?">
+                  <select class="form-control" id="location">
+                    <option value="" disabled selected>Location...</option>
+                    <option>Lagos</option>
+                    <option>Abuja</option>
+                    <option>Kano</option>
+                    <option>Calabar</option>
+                  </select>
+                  <select class="form-control mr-1" id="category">
+                    <option value="" disabled selected>Category...</option>
+                    <option>Banking</option>
+                    <option>Education</option>
+                    <option>Plumbing</option>
+                    <option>Photography</option>
+                  </select>
+                  <button class="btn btn-primary" id="submit" type="submit">Search</button>
+              </form>
           </div>
+        </div>
       </section>
       <section class="container">
         <div class="row justify-content-md-center">
-          <h4>Today's Top Businesses</p>
+          <h4 id="topText">Today's Top Businesses</h4>
         </div>
         <div class="row">
           <div class="col-md-4">
@@ -84,7 +94,7 @@
           </div>
         </div>          
       </section>
-      <footer class="container-fluid">
+      <footer class="container-fluid bg-dark">
         <div class="container">
           <div class="row">
             <div class="col-12 col-md">
