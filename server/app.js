@@ -22,7 +22,7 @@ app.get('*', (req, res) => {
 	});
 });
 
-app.set('port', parseInt(process.env.PORT, 10) || 3000);
+app.set('port', process.env.PORT || 3000);
 
 http.createServer(app).listen(app.get('port'), () => {
 	console.log(`Express server listening on port ${app.get('port')}`);
