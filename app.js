@@ -9,6 +9,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(require('./server/routes/appRoutes'));
 
+app.use(express.static(`${__dirname}/public`));
+
+// serve api docs
+app.get('/', (req, res) => {
+	res.sendFile('index.htm');
+});
+
 app.set('port', process.env.PORT || 3000);
 
 http.createServer(app).listen(app.get('port'), () => {
