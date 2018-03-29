@@ -12,7 +12,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "clean": "rm -rf dist",
     "postinstall": " npm run clean && mkdir dist && babel ./ -s -d dist --ignore node_modules",
-    "start": "nodemon ./server/app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",

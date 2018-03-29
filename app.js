@@ -6,9 +6,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(require('./routes/appRoutes'));
+app.use(require('./server/routes/appRoutes'));
 
-app.use(express.static(`${__dirname}/public`));
+app.use(express.static(`${__dirname}/server/public`));
 
 // serve api docs
 app.get('/', (req, res) => {
