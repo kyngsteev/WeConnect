@@ -1,7 +1,7 @@
 const uuidv4 = require('uuid/v4');
 
 module.exports = {
-	up: (queryInterface, Sequelize) => queryInterface.createTable('Businesses', {
+	up: (queryInterface, Sequelize) => queryInterface.createTable('Business', {
 		id: {
 			allowNull: false,
 			primaryKey: true,
@@ -37,14 +37,14 @@ module.exports = {
 			type: Sequelize.DATE
 		},
 		userId: {
-			type: Sequelize.INTEGER,
+			type: Sequelize.UUID,
 			onDelete: 'CASCADE',
 			references: {
 				model: 'Users',
 				key: 'id',
 				as: 'userId',
 			},
-		},
+		}
 	}),
-	down: (queryInterface, Sequelize) => queryInterface.dropTable('Businesses')
+	down: (queryInterface, Sequelize) => queryInterface.dropTable('Business')
 };
