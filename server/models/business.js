@@ -13,8 +13,7 @@ module.exports = (sequelize, DataTypes) => {
 	}, {});
 	Business.associate = (models) => {
 		Business.hasMany(models.Review, {
-			foreignKey: 'businessId',
-			as: 'reviewItems',
+			foreignKey: 'businessId'
 		});
 		Business.belongsTo(models.User, {
 			foreignKey: 'userId',
