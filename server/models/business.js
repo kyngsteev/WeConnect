@@ -11,8 +11,6 @@ module.exports = (sequelize, DataTypes) => {
 			foreignKey: 'businessId',
 			as: 'reviewItems',
 		});
-	};
-	Business.associate = (models) => {
 		Business.belongsTo(models.User, {
 			foreignKey: 'userId',
 			onDelete: 'CASCADE',

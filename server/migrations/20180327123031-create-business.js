@@ -7,18 +7,23 @@ module.exports = {
 			type: Sequelize.INTEGER
 		},
 		name: {
+			allowNull: false,
 			type: Sequelize.STRING
 		},
 		address: {
+			allowNull: false,
 			type: Sequelize.STRING
 		},
 		description: {
+			allowNull: false,
 			type: Sequelize.STRING
 		},
 		location: {
+			allowNull: false,
 			type: Sequelize.STRING
 		},
 		category: {
+			allowNull: false,
 			type: Sequelize.STRING
 		},
 		createdAt: {
