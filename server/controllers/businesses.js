@@ -1,6 +1,4 @@
 const models = require('../models');
-const Review = require('../models/review');
-const User = require('../models/user');
 
 module.exports = {
 
@@ -19,7 +17,10 @@ module.exports = {
 			})
 			.spread((user, created) => {
 				if (created === true) {
-					res.status(201).send(user);
+					res.status(201).send({
+						message: 'Business successfully created',
+						Business: user
+					});
 				} else {
 					res.status(404).send({
 						message: 'Sorry! User already exist',
@@ -33,8 +34,14 @@ module.exports = {
 	list(req, res) {
 		return models.Business
 			.all()
-			.then(business => res.status(200).send(business))
-			.catch(error => res.status(400).send(error));
+			.then(business => res.status(200).send({
+				message: 'Success',
+				Businesses: business
+			}))
+			.catch(error => res.status(400).send({
+				message: 'No business found',
+				error
+			}));
 	},
 
 	// Get one Business
@@ -43,29 +50,48 @@ module.exports = {
 			.findById(req.params.businessId)
 			.then((business) => {
 				if (!business) {
-					return res.status(404).send({
-						message: 'Business Not Found',
+					return res.status(409).send({
+						message: 'No business found',
+						business: []
 					});
 				}
-				return res.status(200).send(business);
+				return res.status(200).send({
+					message: 'Success',
+					Businesses: business
+				});
 			})
-			.catch(error => res.status(400).send(error));
+			.catch(error => res.status(400).send({
+				message: 'No business found',
+				error
+			}));
 	},
 
 	// List all Businesses by location
 	listByLocation(req, res) {
 		return models.Business
 			.findAll(req.params.location)
-			.then(business => res.status(200).send(business))
-			.catch(error => res.status(400).send(error));
+			.then(business => res.status(200).send({
+				message: 'Success',
+				Businesses: business
+			}))
+			.catch(error => res.status(400).send({
+				message: 'No business found',
+				error
+			}));
 	},
 
 	// List all Businesses by category
 	listByCategory(req, res) {
 		return models.Business
 			.findAll(req.params.category)
-			.then(business => res.status(200).send(business))
-			.catch(error => res.status(400).send(error));
+			.then(business => res.status(200).send({
+				message: 'Success',
+				Businesses: business
+			}))
+			.catch(error => res.status(400).send({
+				message: 'No business found',
+				error
+			}));
 	},
 
 	update(req, res) {
@@ -74,7 +100,7 @@ module.exports = {
 			.then((business) => {
 				if (!business) {
 					return res.status(404).send({
-						message: 'Business Not Found',
+						message: 'No business found',
 					});
 				}
 				return business
@@ -85,7 +111,10 @@ module.exports = {
 						location: req.body.location || business.location,
 						category: req.body.category || business.category
 					})
-					.then(() => res.status(200).send(business)) // Send back the updated business.
+					.then(() => res.status(200).send({
+						message: 'Business successfully updated',
+						Business: business
+					})) // Send back the updated business.
 					.catch(error => res.status(400).send(error));
 			})
 			.catch(error => res.status(400).send(error));
@@ -97,7 +126,7 @@ module.exports = {
 			.then((business) => {
 				if (!business) {
 					return res.status(404).send({
-						message: 'Business Not Found',
+						message: 'No business found',
 					});
 				}
 				return business
@@ -105,7 +134,10 @@ module.exports = {
 					.then(() => res.status(200).send({
 						message: 'Business has been successfully deleted',
 					}))
-					.catch(error => res.status(400).send(error));
+					.catch(error => res.status(400).send({
+						message: 'Business could not be deleted',
+						error
+					}));
 			})
 			.catch(error => res.status(400).send(error));
 	}
