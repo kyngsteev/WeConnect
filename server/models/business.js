@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
 	let Business = sequelize.define('Business', {
-		uuid: {
+		id: {
 			type: DataTypes.UUID,
-			defaultValue: DataTypes.UUIDV1,
+			defaultValue: DataTypes.UUIDV4,
 			primaryKey: true
 		},
 		name: DataTypes.STRING,

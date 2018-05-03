@@ -1,9 +1,12 @@
 const businessController = require('../controllers').dbBusiness;
+const userController = require('../controllers').dbUser;
 
 module.exports = (app) => {
 	app.get('/v1', (req, res) => res.status(200).send({
 		message: 'Welcome to the Todos API!',
 	}));
+
+	app.post('/v1/auth/signup', userController.create);
 
 	app.post('/v1/businesses', businessController.create);
 	app.get('/v1/businesses', businessController.list);

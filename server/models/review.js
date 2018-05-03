@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
 	let Review = sequelize.define('Review', {
-		uuid: {
+		id: {
 			type: DataTypes.UUID,
-			defaultValue: DataTypes.UUIDV1,
+			defaultValue: DataTypes.UUIDV4,
 			primaryKey: true
 		},
 		title: DataTypes.STRING,

@@ -23,7 +23,7 @@ module.exports = {
 					});
 				} else {
 					res.status(404).send({
-						message: 'Sorry! User already exist',
+						message: 'Sorry! Business already exist',
 						error: created
 					});
 				}

@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "async": "*",
+    "bcrypt": "^1.0.3",
     "body-parser": "*",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
