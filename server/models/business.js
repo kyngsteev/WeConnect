@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
 		description: DataTypes.STRING,
 		location: DataTypes.STRING,
 		category: DataTypes.STRING
-	}, {});
+	}, {
+		freezeTableName: true
+	});
 	Business.associate = (models) => {
 		Business.hasMany(models.Review, {
 			foreignKey: 'businessId'
